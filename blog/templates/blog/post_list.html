@@ -5,7 +5,12 @@
     <title>My Django Girls Blog</title>
 </head>
 <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <p><a href="">{{ post.title }}</a></p>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
